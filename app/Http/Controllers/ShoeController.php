@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shoe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ShoeController extends Controller
 {
@@ -26,7 +27,7 @@ class ShoeController extends Controller
      */
     public function create()
     {
-        //
+      return view('admin.shoes.create');
     }
 
     /**
@@ -37,7 +38,14 @@ class ShoeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $this->validation($request->all());
+
+        $shoe = new Shoe;
+        $shoe->fill($data);
+        
+        $shoe->save();
+        return redirect()->route('admin.shoes.show', $shoe);
+
     }
 
     /**
@@ -83,5 +91,51 @@ class ShoeController extends Controller
     public function destroy(Shoe $shoe)
     {
         //
+    }
+    
+    private function validation($data) {
+      $validator = Validator::make(
+
+        $data, [
+          'marca'  => 'required|string|max:50',
+          'modello'=> 'required|string|max:50',
+          'colore' => 'required|string|max:50',
+          'taglia' => 'required|numeric|between: 20 , 46',
+          'prezzo' => 'required|numeric|between:0.00, 9999.99',
+          'costo' => 'required|numeric|between:0.00, 9999.99',
+          'genere' => 'required|in: uomo, donna, bambino, bambina',
+          'image' => 'required|string',
+        ],
+        [
+          'marca.required' => 'il campo è richiesto',
+          'modello.required' => 'il campo è richiesto',
+          'colore.required' => 'il campo è richiesto',
+          'taglia.required' => 'il campo è richiesto',
+          'prezzo.required' => 'il campo è richiesto',
+          'costo.required' => 'il campo è richiesto',
+          'genere.required' => 'il campo è richiesto',
+          'image.required' => 'il campo è richiesto',
+
+          'taglia.string' => 'il campo deve essere una stringa',
+          'prezzo.string' => 'il campo deve essere una stringa',
+          'costo.string' => 'il campo deve essere una stringa',
+          'genere.string' => 'il campo deve essere una stringa',
+          'image.string' => 'il campo deve essere una stringa',
+
+          'marca.max'=> 'il campo deve avere massimo 50 caratteri',
+          'modello.max'=> 'il campo deve avere massimo 50 caratteri',
+          'colore.max'=> 'il campo deve avere massimo 50 caratteri',
+          
+          'taglia.numeric' => 'il campo deve essere un numero',
+          'prezzo.numeric' => 'il campo deve essere un numero',
+          'costo.numeric' => 'il campo deve essere un numero',
+          'taglia.between' => 'la taglia deve essere compresa tra 20 e 46',
+          'prezzo.between' => 'il prezzo deve essere compreso tra 0.00 e 9999.99',
+          'costo.between' => 'il  costo deve essere compreso tra 0.00 e 9999.99',
+          'genere.in' => ' il genere deve essere: uomo, donna, bambino, bambina',
+
+        ]
+      )->validate();
+      return $validator;
     }
 }
