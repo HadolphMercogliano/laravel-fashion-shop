@@ -14,7 +14,9 @@ class ShoeController extends Controller
      */
     public function index()
     {
-        //
+        $shoes = Shoe::paginate(10);
+
+        return view('admin.shoes.index', compact('shoes'));
     }
 
     /**
