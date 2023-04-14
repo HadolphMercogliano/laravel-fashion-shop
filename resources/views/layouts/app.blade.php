@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,10 +24,11 @@
 
 <body>
     @include('partials.navbar')
+    <div class="container">
+        <h1 class="my-4">@yield('title')</h1>
 
-    <h1>@yield('title')</h1>
-
-    @yield('content')
+        @yield('content')
+    </div>
 </body>
 
 </html>
