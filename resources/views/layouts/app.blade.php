@@ -23,6 +23,7 @@
     @include('partials.navbar')
 
     <h1>@yield('title')</h1>
+
     @yield('content')
 </body>
 

@@ -29,12 +29,12 @@
                     <td>{{ $shoe->costo }}</td>
                     <td>{{ $shoe->genere }}</td>
                     <td>
-                        {{-- <a href={{ route('admin.shoes.show', $shoe) }} class="action-icon">
+                        <a href={{ route('admin.shoes.show', $shoe) }} class="action-icon">
                             <i class=" bi bi-eye mx-2"></i>
                         </a>
                         <a href={{ route('admin.shoes.edit', $shoe) }} class="action-icon">
                             <i class="bi bi-pencil mx-2"></i>
-                        </a> --}}
+                        </a>
 
                         {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                             data-bs-target="#delete-modal-{{ $shoe->id }}">
