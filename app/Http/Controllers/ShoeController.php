@@ -103,7 +103,7 @@ class ShoeController extends Controller
           'taglia' => 'required|numeric|between: 20 , 46',
           'prezzo' => 'required|numeric|between:0.00, 9999.99',
           'costo' => 'required|numeric|between:0.00, 9999.99',
-          'genere' => 'required|in: uomo, donna, bambino, bambina',
+          'genere' => 'required',
           'image' => 'required|string',
         ],
         [
@@ -132,8 +132,7 @@ class ShoeController extends Controller
           'taglia.between' => 'la taglia deve essere compresa tra 20 e 46',
           'prezzo.between' => 'il prezzo deve essere compreso tra 0.00 e 9999.99',
           'costo.between' => 'il  costo deve essere compreso tra 0.00 e 9999.99',
-          'genere.in' => ' il genere deve essere: uomo, donna, bambino, bambina',
-
+          
         ]
       )->validate();
       return $validator;

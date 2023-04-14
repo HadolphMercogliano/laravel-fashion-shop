@@ -4,7 +4,7 @@
 
 @section('content')
     <table class="table table-striped">
-        <a class="btn btn-primary my-3" href="">Aggiungi progetto</a>
+        <a class="btn btn-primary my-3" href="{{route('admin.shoes.create')}}">Aggiungi prodotto</a>
         <thead>
             <tr>
                 <th scope="col">ID</th>
