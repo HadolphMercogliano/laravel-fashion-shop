@@ -5,6 +5,10 @@
 @section('content')
 
     <div class="container">
+
+        <a class="btn btn-primary my-3" href="{{ route('admin.shoes.index') }}">Torna alla lista</a>
+
+
         <div class="card">
             <div class="card-body">
                 <form method="POST" action="{{ route('admin.shoes.store') }}">
