@@ -92,7 +92,9 @@ class ShoeController extends Controller
    */
   public function destroy(Shoe $shoe)
   {
-    //
+    $shoe->delete();
+
+    return to_route('admin.shoes.index');
   }
 
   private function validation($data)
