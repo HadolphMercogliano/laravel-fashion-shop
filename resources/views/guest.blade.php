@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
 		<div class="container">
 				<div class="row justify-content-center align-items-center g-4">
 						@forelse ($shoes as $shoe)
 								<div class="col-4">
-										<div class="card">
+										<div class="card shadow">
 												<img src="{{ $shoe->image }}" class="card-img-top" alt="...">
 												<div class="card-body">
 														<h4 class="card-title">Modello: {{ $shoe->marca }} - {{ $shoe->modello }}</h4>

@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('guest');
 // })->name('guest');
 
-Route::get('/guest', [GuestController::class, 'index'])->name('guest');
+Route::get('/', [GuestController::class, 'index'])->name('guest');
 
 Route::middleware('auth')
     ->prefix("/admin")
