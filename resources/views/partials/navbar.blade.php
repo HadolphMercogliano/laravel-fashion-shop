@@ -18,7 +18,7 @@
                  <!-- Left Side Of Navbar -->
                  <ul class="navbar-nav me-auto">
                      <li class="nav-item">
-                         <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Home') }}</a>
+                         <a class="nav-link" href="{{ route('guest') }}">{{ __('Home') }}</a>
                      </li>
                  </ul>
 
@@ -26,6 +26,7 @@
                  <ul class="navbar-nav ml-auto">
                      <!-- Authentication Links -->
                      @guest
+                     
                          <li class="nav-item">
                              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                          </li>

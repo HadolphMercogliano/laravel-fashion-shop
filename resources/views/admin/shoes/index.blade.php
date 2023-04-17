@@ -15,6 +15,8 @@
                 <th scope="col">Prezzo</th>
                 <th scope="col">Costo</th>
                 <th scope="col">Genere</th>
+                <th scope="col">Azioni</th>
+
             </tr>
         </thead>
         <tbody>

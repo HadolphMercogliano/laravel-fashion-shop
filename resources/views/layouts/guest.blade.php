@@ -17,7 +17,13 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
+  <header>
+    @include('partials.navbar')
+  </header>
+  <main>
     <h1>Benvenuti nel nostro shop</h1>
+      @yield('content')
+  </main>
 </body>
 
 </html>

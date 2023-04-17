@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\GuestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShoeController;
 use Illuminate\Support\Facades\Route;
@@ -15,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('guest');
+// })->name('guest');
 
-// Route::get('shoes', [ShoeController::class, 'index'])->middleware('auth');
+Route::get('/guest', [GuestController::class, 'index'])->name('guest');
 
 Route::middleware('auth')
     ->prefix("/admin")
