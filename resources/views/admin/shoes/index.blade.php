@@ -7,14 +7,16 @@
 				<a class="btn btn-primary my-3" href="{{ route('admin.shoes.create') }}">Aggiungi prodotto</a>
 				<thead>
 						<tr>
-								<th scope="col">ID</th>
-								<th scope="col">Marca</th>
-								<th scope="col">Modello</th>
-								<th scope="col">Colore</th>
-								<th scope="col">Taglia</th>
-								<th scope="col">Prezzo</th>
-								<th scope="col">Costo</th>
-								<th scope="col">Genere</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=id&order=@if ($sort == 'id' && $order != 'DESC') DESC @else ASC @endif">ID</a>
+								</th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=marca">Marca</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=modello">Modello</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=colore">Colore</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=taglia">Taglia</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=prezzo">Prezzo</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=costo">Costo</a></th>
+								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=genere">Genere</a></th>
 								<th scope="col">Azioni</th>
 
 						</tr>

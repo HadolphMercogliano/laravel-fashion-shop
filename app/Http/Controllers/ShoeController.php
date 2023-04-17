@@ -10,14 +10,17 @@ class ShoeController extends Controller
 {
   /**
    * Display a listing of the resource.
-   *
+   * 
+   * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function index()
+  public function index(Request $request)
   {
-    $shoes = Shoe::paginate(10);
+    $sort = (!empty($sort_request = $request->get('sort'))) ?$sort_request : "updated_at";
+    $order = (!empty($order_request = $request->get('order'))) ?$order_request : "DESC";
+    $shoes = Shoe::orderBy($sort, $order)->paginate(10)->withQueryString();
 
-    return view('admin.shoes.index', compact('shoes'));
+    return view('admin.shoes.index', compact('shoes', 'sort', 'order'));
   }
 
   /**
