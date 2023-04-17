@@ -8,15 +8,62 @@
 				<thead>
 						<tr>
 								<th scope="col"><a
-												href="{{ route('admin.shoes.index') }}?sort=id&order=@if ($sort == 'id' && $order != 'DESC') DESC @else ASC @endif">ID</a>
+												href="{{ route('admin.shoes.index') }}?sort=id&order=@if ($sort == 'id' && $order != 'DESC') DESC @else ASC @endif">ID
+												@if ($sort == 'id')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
 								</th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=marca">Marca</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=modello">Modello</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=colore">Colore</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=taglia">Taglia</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=prezzo">Prezzo</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=costo">Costo</a></th>
-								<th scope="col"><a href="{{ route('admin.shoes.index') }}?sort=genere">Genere</a></th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=marca&order=@if ($sort == 'marca' && $order != 'DESC') DESC @else ASC @endif">Marca
+												@if ($sort == 'marca')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=modello&order=@if ($sort == 'modello' && $order != 'DESC') DESC @else ASC @endif">Modello
+												@if ($sort == 'modello')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=colore&order=@if ($sort == 'colore' && $order != 'DESC') DESC @else ASC @endif">Colore
+												@if ($sort == 'colore')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=taglia&order=@if ($sort == 'taglia' && $order != 'DESC') DESC @else ASC @endif">Taglia
+												@if ($sort == 'taglia')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=prezzo&order=@if ($sort == 'prezzo' && $order != 'DESC') DESC @else ASC @endif">Prezzo
+												@if ($sort == 'prezzo')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=costo&order=@if ($sort == 'costo' && $order != 'DESC') DESC @else ASC @endif">Costo
+												@if ($sort == 'costo')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+								</th>
+								<th scope="col"><a
+												href="{{ route('admin.shoes.index') }}?sort=genere&order=@if ($sort == 'genere' && $order != 'DESC') DESC @else ASC @endif">Genere
+												@if ($sort == 'genere')
+														<i class="bi bi-arrow-down d-inline-block @if ($order == 'DESC') rotate-180 @endif"></i>
+												@endif
+										</a>
+
+								</th>
 								<th scope="col">Azioni</th>
 
 						</tr>
