@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+    app:
+        build: .
+        volumes:
+            - .:/var/www
+        ports:
+            - "8000:8000"
+        environment:
+            - "APP_ENV=local"
+            - "DB_HOST=db"
