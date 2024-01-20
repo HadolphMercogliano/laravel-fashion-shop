@@ -82,15 +82,15 @@
 										<td>{{ $shoe->genere }}</td>
 										<td>
 												<a href={{ route('admin.shoes.show', $shoe) }} class="action-icon">
-														<i class=" bi bi-eye mx-2"></i>
+														<i class=" bi bi-eye mx-1"></i>
 												</a>
 												<a href={{ route('admin.shoes.edit', $shoe) }} class="action-icon">
-														<i class="bi bi-pencil mx-2"></i>
+														<i class="bi bi-pencil mx-1"></i>
 												</a>
 
 												<a type="button" class="text-danger" data-bs-toggle="modal"
 														data-bs-target="#delete-modal-{{ $shoe->id }}">
-														<i class="bi bi-trash mx-2"></i>
+														<i class="bi bi-trash mx-1"></i>
 												</a>
 												@foreach ($shoes as $shoe)
 														<!-- Modal -->
